@@ -27,11 +27,11 @@ void main(void) {
 FAKE:
     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {
-            LED_PWM = 1;
+            LED_PWM = 1; // Encendemos el LED     
         } else {
-            LED_PWM = 0;
+            LED_PWM = 0; // Apagamos el LED
         }
-        if (UP == 1 && DOWM == 0) {
+        if (UP == 1 && DOWM == 0) { // Preguntamos por los botones de cambio
             if (counter <= TOPE) {
                 counter++;
             } else {
