@@ -5708,18 +5708,20 @@ FAKE:
         if (PORTBbits.RB1 == 1 && PORTBbits.RB2 == 0) {
             if (counter <= 250) {
                 counter++;
-                _delay((unsigned long)((10)*(20000000/4000.0)));
             } else {
                 counter = counter;
             }
+SEN:
+            if (PORTBbits.RB1 == 1) goto SEN;
         } else {
             if (PORTBbits.RB1 == 0 && PORTBbits.RB2 == 1) {
                 if (counter >= 50) {
                     counter--;
-                    _delay((unsigned long)((10)*(20000000/4000.0)));
                 } else {
                     counter = counter;
                 }
+SEN1:
+                if (PORTBbits.RB2 == 1) goto SEN1;
             } else {
                 counter = counter;
             }

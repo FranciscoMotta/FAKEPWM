@@ -34,18 +34,20 @@ FAKE:
         if (UP == 1 && DOWM == 0) {
             if (counter <= TOPE) {
                 counter++;
-                __delay_ms(10);
             } else {
                 counter = counter;
             }
+SEN:
+            if (UP == 1) goto SEN;
         } else {
             if (UP == 0 && DOWM == 1) {
                 if (counter >= PISO) {
                     counter--;
-                    __delay_ms(10);
                 } else {
                     counter = counter;
                 }
+SEN1:
+                if (DOWM == 1) goto SEN1;
             } else {
                 counter = counter;
             }

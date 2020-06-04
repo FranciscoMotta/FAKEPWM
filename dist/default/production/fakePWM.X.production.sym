@@ -5,7 +5,7 @@ __S2 0 0 ABS 0
 __Hintentry 0 0 ABS 0
 __CFG_PWRT$OFF 0 0 ABS 0
 __Lintentry 0 0 ABS 0
-_main 7F04 0 CODE 0
+_main 7EF8 0 CODE 0
 ___sp 0 0 STACK 2
 start 0 0 CODE 0
 __Hirdata 0 0 CODE 0
@@ -80,7 +80,7 @@ __end_of_main 8000 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-end_of_initialization 7EF6 0 CODE 0
+end_of_initialization 7EEA 0 CODE 0
 __CFG_USBDIV$1 0 0 ABS 0
 __CFG_VREGEN$OFF 0 0 ABS 0
 __CFG_PLLDIV$1 0 0 ABS 0
@@ -98,7 +98,7 @@ __Hbank2 0 0 ABS 0
 __Lbank2 0 0 ABS 0
 __Hbank3 0 0 ABS 0
 __Lbank3 0 0 ABS 0
-__end_of_limpiaPuertos 7F04 0 CODE 0
+__end_of_limpiaPuertos 7EF8 0 CODE 0
 __Hbank4 0 0 ABS 0
 __Lbank4 0 0 ABS 0
 __Hbank5 0 0 ABS 0
@@ -113,11 +113,11 @@ __Htext0 0 0 ABS 0
 __Ltext0 0 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
-__ptext0 7F04 0 CODE 0
-__ptext1 7EFC 0 CODE 0
+__ptext0 7EF8 0 CODE 0
+__ptext1 7EF0 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
-__end_of__initialization 7EF6 0 CODE 0
+__end_of__initialization 7EEA 0 CODE 0
 main@counter 2 0 COMRAM 1
 ___rparam_used 1 0 ABS 0
 __Hidata 0 0 CODE 0
@@ -147,7 +147,7 @@ __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
 __CFG_FOSC$HS 0 0 ABS 0
-__pcinit 7EF6 0 CODE 0
+__pcinit 7EEA 0 CODE 0
 __CFG_EBTRB$OFF 0 0 ABS 0
 __ramtop 800 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
@@ -184,12 +184,12 @@ main@variableRandonDeCuentaXD 4 0 COMRAM 1
 __CFG_WRTD$OFF 0 0 ABS 0
 __CFG_CPB$OFF 0 0 ABS 0
 __CFG_CPD$OFF 0 0 ABS 0
-start_initialization 7EF6 0 CODE 0
+start_initialization 7EEA 0 CODE 0
 __CFG_IESO$OFF 0 0 ABS 0
 __CFG_MCLRE$ON 0 0 ABS 0
-__initialization 7EF6 0 CODE 0
+__initialization 7EEA 0 CODE 0
 __CFG_LPT1OSC$OFF 0 0 ABS 0
-_limpiaPuertos 7EFC 0 CODE 0
+_limpiaPuertos 7EF0 0 CODE 0
 __CFG_ICPRT$OFF 0 0 ABS 0
 __CFG_BOR$OFF 0 0 ABS 0
 __activetblptr 0 0 ABS 0
@@ -200,44 +200,46 @@ reset_vec 0 3 CODE 0 0
 config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
 cstackCOMRAM 1 5 COMRAM 1 1
-text0 7F04 7FFF CODE 7F04 0
-text1 7EFC 7F03 CODE 7EFC 0
-cinit 7EF6 7EFB CODE 7EF6 0
+text0 7EF8 7FFF CODE 7EF8 0
+text1 7EF0 7EF7 CODE 7EF0 0
+cinit 7EEA 7EEF CODE 7EEA 0
 %locals
 dist/default/production\fakePWM.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-C:\Users\HP\AppData\Local\Temp\sl18.s
-537 7EF6 0 CODE 0
-539 7EF6 0 CODE 0
-542 7EF6 0 CODE 0
-548 7EF6 0 CODE 0
-550 7EF6 0 CODE 0
-551 7EF8 0 CODE 0
+C:\Users\HP\AppData\Local\Temp\s5pk.s
+537 7EEA 0 CODE 0
+539 7EEA 0 CODE 0
+542 7EEA 0 CODE 0
+548 7EEA 0 CODE 0
+550 7EEA 0 CODE 0
+551 7EEC 0 CODE 0
 main.c
-23 7F04 0 CODE 0
-24 7F04 0 CODE 0
-25 7F04 0 CODE 0
-26 7F08 0 CODE 0
-28 7F10 0 CODE 0
-29 7F18 0 CODE 0
-30 7F36 0 CODE 0
-31 7F38 0 CODE 0
-32 7F3C 0 CODE 0
-33 7F3E 0 CODE 0
-34 7F3E 0 CODE 0
-35 7F5A 0 CODE 0
-36 7F76 0 CODE 0
-37 7F7A 0 CODE 0
-38 7F8A 0 CODE 0
-41 7F8E 0 CODE 0
-42 7F8E 0 CODE 0
-43 7FAA 0 CODE 0
-44 7FC6 0 CODE 0
-53 7FD0 0 CODE 0
-54 7FD8 0 CODE 0
+23 7EF8 0 CODE 0
+24 7EF8 0 CODE 0
+25 7EF8 0 CODE 0
+26 7EFC 0 CODE 0
+28 7F04 0 CODE 0
+29 7F0C 0 CODE 0
+30 7F2A 0 CODE 0
+31 7F2C 0 CODE 0
+32 7F30 0 CODE 0
+33 7F32 0 CODE 0
+34 7F32 0 CODE 0
+35 7F4E 0 CODE 0
+36 7F6A 0 CODE 0
+40 7F6E 0 CODE 0
+41 7F6E 0 CODE 0
+42 7F80 0 CODE 0
+43 7F80 0 CODE 0
+44 7F9C 0 CODE 0
+45 7FB8 0 CODE 0
+49 7FBE 0 CODE 0
+50 7FBE 0 CODE 0
+55 7FD0 0 CODE 0
+56 7FD8 0 CODE 0
 main.c
-59 7EFC 0 CODE 0
-60 7EFC 0 CODE 0
-61 7EFE 0 CODE 0
-62 7F00 0 CODE 0
-63 7F02 0 CODE 0
+61 7EF0 0 CODE 0
+62 7EF0 0 CODE 0
+63 7EF2 0 CODE 0
+64 7EF4 0 CODE 0
+65 7EF6 0 CODE 0
