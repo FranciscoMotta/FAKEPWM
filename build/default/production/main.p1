@@ -658,8 +658,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 25:     limpiaPuertos();
 [e ( _limpiaPuertos ..  ]
 "26
-[; ;main.c: 26:     counter = 100;
-[e = _counter -> 100 `i ]
+[; ;main.c: 26:     counter = 22;
+[e = _counter -> 22 `i ]
 "27
 [; ;main.c: 27: FAKE:
 [e :U 368 ]
@@ -696,8 +696,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! && == -> . . _PORTBbits 0 1 `i -> 1 `i == -> . . _PORTBbits 0 2 `i -> 0 `i 374  ]
 {
 "35
-[; ;main.c: 35:             if (counter <= 250) {
-[e $ ! <= _counter -> 250 `i 375  ]
+[; ;main.c: 35:             if (counter <= 50) {
+[e $ ! <= _counter -> 50 `i 375  ]
 {
 "36
 [; ;main.c: 36:                 counter++;
@@ -734,8 +734,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTBbits 0 2 `i -> 1 `i 380  ]
 {
 "44
-[; ;main.c: 44:                 if (counter >= 50) {
-[e $ ! >= _counter -> 50 `i 381  ]
+[; ;main.c: 44:                 if (counter >= 2) {
+[e $ ! >= _counter -> 2 `i 381  ]
 {
 "45
 [; ;main.c: 45:                     counter--;

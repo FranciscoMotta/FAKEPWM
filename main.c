@@ -14,8 +14,8 @@
 #define LED_PWM LATBbits.LATB0 
 #define UP PORTBbits.RB1
 #define DOWM PORTBbits.RB2
-#define TOPE 250
-#define PISO 50
+#define TOPE 50
+#define PISO 2
 
 
 void limpiaPuertos(void);
@@ -23,7 +23,7 @@ void limpiaPuertos(void);
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0;
     limpiaPuertos();
-    counter = 100;
+    counter = 22;
 FAKE:
     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {

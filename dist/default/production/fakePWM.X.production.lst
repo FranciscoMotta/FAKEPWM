@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Thu Jun 04 01:51:26 2020
+                                                                                               Thu Jun 04 02:02:43 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F4550
@@ -137,10 +137,10 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    123                           ;main.c: 25:     limpiaPuertos();
    124  007EF8  EC78  F03F         	call	_limpiaPuertos	;wreg free
    125  007EFC                     
-   126                           ;main.c: 26:     counter = 100;
+   126                           ;main.c: 26:     counter = 22;
    127  007EFC  0E00               	movlw	0
    128  007EFE  6E03               	movwf	(main@counter+1)^0,c
-   129  007F00  0E64               	movlw	100
+   129  007F00  0E16               	movlw	22
    130  007F02  6E02               	movwf	main@counter^0,c
    131  007F04                     l719:
    132                           
@@ -193,12 +193,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    178  007F4A  EFC0  F03F         	goto	l20
    179  007F4E                     u30:
    180  007F4E                     
-   181                           ;main.c: 35:             if (counter <= 250) {
+   181                           ;main.c: 35:             if (counter <= 50) {
    182  007F4E  BE03               	btfsc	(main@counter+1)^0,7,c
    183  007F50  EFB5  F03F         	goto	u40
    184  007F54  5003               	movf	(main@counter+1)^0,w,c
    185  007F56  E107               	bnz	u41
-   186  007F58  0EFB               	movlw	251
+   186  007F58  0E33               	movlw	51
    187  007F5A  5C02               	subwf	main@counter^0,w,c
    188  007F5C  B0D8               	btfsc	status,0,c
    189  007F5E  EFB3  F03F         	goto	u41
@@ -236,12 +236,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    221  007F98  EFE8  F03F         	goto	l745
    222  007F9C                     u70:
    223  007F9C                     
-   224                           ;main.c: 44:                 if (counter >= 50) {
+   224                           ;main.c: 44:                 if (counter >= 2) {
    225  007F9C  BE03               	btfsc	(main@counter+1)^0,7,c
    226  007F9E  EFDA  F03F         	goto	u81
    227  007FA2  5003               	movf	(main@counter+1)^0,w,c
    228  007FA4  E109               	bnz	u80
-   229  007FA6  0E32               	movlw	50
+   229  007FA6  0E02               	movlw	2
    230  007FA8  5C02               	subwf	main@counter^0,w,c
    231  007FAA  A0D8               	btfss	status,0,c
    232  007FAC  EFDA  F03F         	goto	u81
@@ -491,7 +491,7 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Thu Jun 04 01:51:26 2020
+Symbol Table                                                                                   Thu Jun 04 02:02:43 2020
 
                           l20 7F80                            l23 7F6E                            l18 7F30  
                           l35 7EF6                            l19 7F32                            l29 7FBE  
