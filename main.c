@@ -23,7 +23,7 @@ void limpiaPuertos(void); //FunciÃ³n para inicializar los puertos de control
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0; // Variables de control 
     limpiaPuertos();
-    counter = 200;
+    counter = 150;
 FAKE:
     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 2000; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {

@@ -5697,7 +5697,7 @@ void limpiaPuertos(void);
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0;
     limpiaPuertos();
-    counter = 200;
+    counter = 150;
 FAKE:
     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 2000; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {
@@ -5724,6 +5724,7 @@ SEN1:
                 if (PORTBbits.RB2 == 1) goto SEN1;
             } else {
                 counter = counter;
+
             }
         }
         _delay((unsigned long)((10)*(20000000/4000000.0)));

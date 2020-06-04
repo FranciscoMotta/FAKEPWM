@@ -658,8 +658,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 25:     limpiaPuertos();
 [e ( _limpiaPuertos ..  ]
 "26
-[; ;main.c: 26:     counter = 200;
-[e = _counter -> 200 `i ]
+[; ;main.c: 26:     counter = 150;
+[e = _counter -> 150 `i ]
 "27
 [; ;main.c: 27: FAKE:
 [e :U 368 ]
@@ -770,50 +770,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 "52
 [; ;main.c: 52:                 counter = counter;
 [e = _counter _counter ]
-"53
-[; ;main.c: 53:             }
+"54
+[; ;main.c: 54:             }
 }
 [e :U 385 ]
-"54
-[; ;main.c: 54:         }
+"55
+[; ;main.c: 55:         }
 }
 [e :U 379 ]
-"55
-[; ;main.c: 55:         _delay((unsigned long)((10)*(20000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
 "56
-[; ;main.c: 56:     }
+[; ;main.c: 56:         _delay((unsigned long)((10)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"57
+[; ;main.c: 57:     }
 }
 [e ++ _variableRandonDeCuentaXD -> 1 `i ]
 [e $ <= _variableRandonDeCuentaXD -> 2000 `i 369  ]
 [e :U 370 ]
 }
-"57
-[; ;main.c: 57:     goto FAKE;
-[e $U 368  ]
 "58
-[; ;main.c: 58:     return;
-[e $UE 367  ]
+[; ;main.c: 58:     goto FAKE;
+[e $U 368  ]
 "59
-[; ;main.c: 59: }
+[; ;main.c: 59:     return;
+[e $UE 367  ]
+"60
+[; ;main.c: 60: }
 [e :UE 367 ]
 }
-"61
-[; ;main.c: 61: void limpiaPuertos(void) {
+"62
+[; ;main.c: 62: void limpiaPuertos(void) {
 [v _limpiaPuertos `(v ~T0 @X0 1 ef ]
 {
 [e :U _limpiaPuertos ]
 [f ]
-"62
-[; ;main.c: 62:     TRISBbits.RB0 = 0;
-[e = . . _TRISBbits 1 0 -> -> 0 `i `uc ]
 "63
-[; ;main.c: 63:     TRISBbits.RB1 = 1;
-[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
+[; ;main.c: 63:     TRISBbits.RB0 = 0;
+[e = . . _TRISBbits 1 0 -> -> 0 `i `uc ]
 "64
-[; ;main.c: 64:     TRISBbits.RB2 = 1;
-[e = . . _TRISBbits 1 2 -> -> 1 `i `uc ]
+[; ;main.c: 64:     TRISBbits.RB1 = 1;
+[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
 "65
-[; ;main.c: 65: }
+[; ;main.c: 65:     TRISBbits.RB2 = 1;
+[e = . . _TRISBbits 1 2 -> -> 1 `i `uc ]
+"66
+[; ;main.c: 66: }
 [e :UE 386 ]
 }
