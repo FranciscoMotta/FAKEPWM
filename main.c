@@ -14,14 +14,14 @@
 #define LED_PWM LATBbits.LATB0 
 #define UP PORTBbits.RB1
 #define DOWM PORTBbits.RB2
-#define TOPE 50
-#define PISO 2
+#define TOPE 50 //Valor max para los 2.5 milis  
+#define PISO 2 //Valor piso para los 0.5 milis
 
 
-void limpiaPuertos(void);
+void limpiaPuertos(void); //Función para inicializar los puertos de control
 
 void main(void) {
-    int counter, variableRandonDeCuentaXD = 0;
+    int counter, variableRandonDeCuentaXD = 0; // Variables de control 
     limpiaPuertos();
     counter = 22;
 FAKE:
@@ -59,7 +59,7 @@ SEN1:
 }
 
 void limpiaPuertos(void) {
-    TRISBbits.RB0 = 0; // Ponemos como salida el pin que servir� de pwm
+    TRISBbits.RB0 = 0; // Ponemos como salida el pin que servirá de pwm
     TRISBbits.RB1 = 1; // Ponemos en 1 el pin RB1 para que sea entrada 
     TRISBbits.RB2 = 1; // Ponemos en 1 al pin RB2 para que sea entrada 
 }
