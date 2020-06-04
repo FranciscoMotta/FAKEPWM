@@ -5692,6 +5692,10 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 #pragma config EBTRB = OFF
 # 10 "main.c" 2
 
+
+
+
+void limpiaPuertos (void);
 void main(void) {
     return;
 }

@@ -193,7 +193,7 @@ text0 7FF6 7FF9 CODE 7FF6 0
 %locals
 dist/default/production\fakePWM.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-C:\Users\HP\AppData\Local\Temp\sk6k.s
+C:\Users\HP\AppData\Local\Temp\s6bc.s
 530 7FFA 0 CODE 0
 532 7FFA 0 CODE 0
 535 7FFA 0 CODE 0
@@ -201,6 +201,6 @@ C:\Users\HP\AppData\Local\Temp\sk6k.s
 543 7FFA 0 CODE 0
 544 7FFC 0 CODE 0
 main.c
-11 7FF6 0 CODE 0
-12 7FF6 0 CODE 0
-13 7FF6 0 CODE 0
+15 7FF6 0 CODE 0
+16 7FF6 0 CODE 0
+17 7FF6 0 CODE 0

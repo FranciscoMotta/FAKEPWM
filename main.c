@@ -8,6 +8,10 @@
 
 #include <xc.h>
 #include "configuraciones.h"
+
+#define _XTAL_FREQ 20000000
+
+void limpiaPuertos (void);
 void main(void) {
     return;
 }
