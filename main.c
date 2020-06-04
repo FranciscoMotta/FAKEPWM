@@ -15,6 +15,7 @@
 #define UP PORTBbits.RB1
 #define DOWM PORTBbits.RB2
 #define TOPE 100
+#define PISO 0
 
 
 void limpiaPuertos(void);
@@ -22,14 +23,36 @@ void limpiaPuertos(void);
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0;
     limpiaPuertos();
-    for (variableRandonDeCuentaXD = 0 ; variableRandonDeCuentaXD <= 100 ; variableRandonDeCuentaXD ++){
-        if (variableRandonDeCuentaXD <= 50){
+    counter = 50;
+FAKE:
+    for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 100; variableRandonDeCuentaXD++) {
+        if (variableRandonDeCuentaXD <= counter) {
             LED_PWM = 1;
         } else {
             LED_PWM = 0;
         }
+        if (UP == 1 && DOWM == 0) {
+            if (counter <= TOPE) {
+                counter++;
+                __delay_ms(10);
+            } else {
+                counter = counter;
+            }
+        } else {
+            if (UP == 0 && DOWM == 1) {
+                if (counter >= PISO) {
+                    counter--;
+                    __delay_ms(10);
+                } else {
+                    counter = counter;
+                }
+            } else {
+                counter = counter;
+            }
+        }
         __delay_ms(5);
     }
+    goto FAKE;
     return;
 }
 

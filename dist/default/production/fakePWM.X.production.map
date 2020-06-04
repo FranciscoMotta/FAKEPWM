@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\fakePWM.X.production.sym \
   --cmf=dist/default/production\fakePWM.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\HP\AppData\Local\Temp\s4is.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\HP\AppData\Local\Temp\sho8.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/fakePWM.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=060h-07FFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0800h-08FFhx120 \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\HP\AppData\Local\Temp\s4is.o \
+  C:\Users\HP\AppData\Local\Temp\sho8.o \
   dist/default/production\fakePWM.X.production.o 
 
 Object code version is 3.11
@@ -36,24 +36,24 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\HP\AppData\Local\Temp\s4is.o
+C:\Users\HP\AppData\Local\Temp\sho8.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\fakePWM.X.production.o
-                text1                              7F94     7F94        8     3FCA       0
-                text0                              7F9C     7F9C       64     3FCE       0
-                cstackCOMRAM                          1        1        3        1       1
-                cinit                              7F8E     7F8E        6     3FC7       0
+                text1                              7F02     7F02        8     3F81       0
+                text0                              7F0A     7F0A       F6     3F85       0
+                cstackCOMRAM                          1        1        5        1       1
+                cinit                              7EFC     7EFC        6     3F7E       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text1                              7F94     7F94        8         0
-                text0                              7F9C     7F9C       64         0
-                cinit                              7F8E     7F8E        6         0
+                text1                              7F02     7F02        8         0
+                text0                              7F0A     7F0A       F6         0
+                cinit                              7EFC     7EFC        6         0
 
         CLASS   CONST          
 
@@ -62,7 +62,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1        3         1
+                cstackCOMRAM                          1        1        5         1
 
         CLASS   ABS1           
 
@@ -103,10 +103,10 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000003  000004         1       1  COMRAM  
-                cinit                          007F8E  000006  007F94      3FC7       0  CODE    
-                text1                          007F94  000008  007F9C      3FCA       0  CODE    
-                text0                          007F9C  000064  008000      3FCE       0  CODE    
+                cstackCOMRAM                   000001  000005  000006         1       1  COMRAM  
+                cinit                          007EFC  000006  007F02      3F7E       0  CODE    
+                text1                          007F02  000008  007F0A      3F81       0  CODE    
+                text0                          007F0A  0000F6  008000      3F85       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -122,20 +122,21 @@ UNUSED ADDRESS RANGES
         BANK5            000500-0005FF              100
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
-        BIGRAM           000004-0007FF              7FC
-        CODE             000004-007F8D             7F8A
-        COMRAM           000004-00005F               5C
-        CONST            000004-007F8D             7F8A
+        BIGRAM           000006-0007FF              7FA
+        CODE             000004-007EFB             7EF8
+        COMRAM           000006-00005F               5A
+        CONST            000004-007EFB             7EF8
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000800-007F8D             778E
+        MEDIUMCONST      000800-007EFB             76FC
         RAM              000060-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000800-007F8D              100
+        SMALLCONST       000800-007EFB              100
         STACK            000060-0007FF              7A0
 
                                   Symbol Table
 
 _LATBbits                     (abs)        000F8A
+_PORTBbits                    (abs)        000F81
 _TRISBbits                    (abs)        000F93
 __CFG_BOR$OFF                 (abs)        000000
 __CFG_BORV$3                  (abs)        000000
@@ -227,7 +228,7 @@ __Hrparam                     rparam       000000
 __Hsfr                        sfr          000000
 __Hsmallconst                 smallconst   000000
 __Hspace_0                    (abs)        30000E
-__Hspace_1                    (abs)        000004
+__Hspace_1                    (abs)        000006
 __Hspace_2                    (abs)        000000
 __Hstack                      stack        000000
 __Hstruct                     struct       000000
@@ -296,7 +297,7 @@ __Ltext                       text         000000
 __Ltext0                      text0        000000
 __Ltext1                      text1        000000
 __S0                          (abs)        30000E
-__S1                          (abs)        000004
+__S1                          (abs)        000006
 __S2                          (abs)        000000
 ___inthi_sp                   stack        000000
 ___intlo_sp                   stack        000000
@@ -305,43 +306,44 @@ ___rparam_used                (abs)        000001
 ___sp                         stack        000000
 __accesstop                   (abs)        000060
 __activetblptr                (abs)        000000
-__end_of__initialization      cinit        007F8E
-__end_of_limpiaPuertos        text1        007F9C
+__end_of__initialization      cinit        007EFC
+__end_of_limpiaPuertos        text1        007F0A
 __end_of_main                 text0        008000
-__initialization              cinit        007F8E
+__initialization              cinit        007EFC
 __mediumconst                 mediumconst  000000
-__pcinit                      cinit        007F8E
+__pcinit                      cinit        007EFC
 __pcstackCOMRAM               cstackCOMRAM 000001
-__ptext0                      text0        007F9C
-__ptext1                      text1        007F94
+__ptext0                      text0        007F0A
+__ptext1                      text1        007F02
 __ramtop                      ramtop       000800
 __size_of_limpiaPuertos       (abs)        000000
 __size_of_main                (abs)        000000
 __smallconst                  smallconst   000000
-_limpiaPuertos                text1        007F94
-_main                         text0        007F9C
-end_of_initialization         cinit        007F8E
+_limpiaPuertos                text1        007F02
+_main                         text0        007F0A
+end_of_initialization         cinit        007EFC
 intlevel0                     text         000000
 intlevel1                     text         000000
 intlevel2                     text         000000
 intlevel3                     text         000000
-main@variableRandonDeCuentaXD cstackCOMRAM 000002
+main@counter                  cstackCOMRAM 000002
+main@variableRandonDeCuentaXD cstackCOMRAM 000004
 stackhi                       (abs)        0007FF
 stacklo                       (abs)        000060
 start                         init         000000
-start_initialization          cinit        007F8E
+start_initialization          cinit        007EFC
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 22 in file "main.c"
+		line 23 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  variableRand    2    1[COMRAM] int 
-  counter         2    0        int 
+  variableRand    2    3[COMRAM] int 
+  counter         2    1[COMRAM] int 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -352,10 +354,10 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
       Params:         0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0
+      Locals:         4       0       0       0       0       0       0       0       0
       Temps:          1       0       0       0       0       0       0       0       0
-      Totals:         3       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
+      Totals:         5       0       0       0       0       0       0       0       0
+Total ram usage:        5 bytes
  Hardware stack levels required when called:    1
  This function calls:
 		_limpiaPuertos
@@ -366,7 +368,7 @@ Total ram usage:        3 bytes
 
  *************** function _limpiaPuertos *****************
  Defined at:
-		line 36 in file "main.c"
+		line 59 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -398,13 +400,13 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initialization		CODE           	7F8E	0000	1
+		__initialization		CODE           	7EFC	0000	1
 
 shared estimated size: 1
 
 main.c
-		_main          		CODE           	7F9C	0000	101
-		_limpiaPuertos 		CODE           	7F94	0000	9
+		_main          		CODE           	7F0A	0000	247
+		_limpiaPuertos 		CODE           	7F02	0000	9
 
-main.c estimated size: 110
+main.c estimated size: 256
 

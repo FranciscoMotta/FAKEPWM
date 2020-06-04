@@ -5691,20 +5691,42 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 # 10 "main.c" 2
-# 20 "main.c"
+# 21 "main.c"
 void limpiaPuertos(void);
 
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0;
     limpiaPuertos();
-    for (variableRandonDeCuentaXD = 0 ; variableRandonDeCuentaXD <= 100 ; variableRandonDeCuentaXD ++){
-        if (variableRandonDeCuentaXD <= 50){
+    counter = 50;
+FAKE:
+    for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 100; variableRandonDeCuentaXD++) {
+        if (variableRandonDeCuentaXD <= counter) {
             LATBbits.LATB0 = 1;
         } else {
             LATBbits.LATB0 = 0;
         }
+        if (PORTBbits.RB1 == 1 && PORTBbits.RB2 == 0) {
+            if (counter <= 100) {
+                counter++;
+                _delay((unsigned long)((10)*(20000000/4000.0)));
+            } else {
+                counter = counter;
+            }
+        } else {
+            if (PORTBbits.RB1 == 0 && PORTBbits.RB2 == 1) {
+                if (counter >= 0) {
+                    counter--;
+                    _delay((unsigned long)((10)*(20000000/4000.0)));
+                } else {
+                    counter = counter;
+                }
+            } else {
+                counter = counter;
+            }
+        }
         _delay((unsigned long)((5)*(20000000/4000.0)));
     }
+    goto FAKE;
     return;
 }
 
