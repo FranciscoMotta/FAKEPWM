@@ -658,16 +658,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 25:     limpiaPuertos();
 [e ( _limpiaPuertos ..  ]
 "26
-[; ;main.c: 26:     counter = 50;
-[e = _counter -> 50 `i ]
+[; ;main.c: 26:     counter = 150;
+[e = _counter -> 150 `i ]
 "27
 [; ;main.c: 27: FAKE:
 [e :U 368 ]
 "28
-[; ;main.c: 28:     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 100; variableRandonDeCuentaXD++) {
+[; ;main.c: 28:     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; variableRandonDeCuentaXD++) {
 {
 [e = _variableRandonDeCuentaXD -> 0 `i ]
-[e $ <= _variableRandonDeCuentaXD -> 100 `i 369  ]
+[e $ <= _variableRandonDeCuentaXD -> 400 `i 369  ]
 [e $U 370  ]
 [e :U 369 ]
 {
@@ -696,8 +696,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! && == -> . . _PORTBbits 0 1 `i -> 1 `i == -> . . _PORTBbits 0 2 `i -> 0 `i 374  ]
 {
 "35
-[; ;main.c: 35:             if (counter <= 100) {
-[e $ ! <= _counter -> 100 `i 375  ]
+[; ;main.c: 35:             if (counter <= 250) {
+[e $ ! <= _counter -> 250 `i 375  ]
 {
 "36
 [; ;main.c: 36:                 counter++;
@@ -729,8 +729,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTBbits 0 2 `i -> 1 `i 378  ]
 {
 "43
-[; ;main.c: 43:                 if (counter >= 0) {
-[e $ ! >= _counter -> 0 `i 379  ]
+[; ;main.c: 43:                 if (counter >= 50) {
+[e $ ! >= _counter -> 50 `i 379  ]
 {
 "44
 [; ;main.c: 44:                     counter--;
@@ -769,13 +769,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 377 ]
 "53
-[; ;main.c: 53:         _delay((unsigned long)((5)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 53:         _delay((unsigned long)((50)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
 "54
 [; ;main.c: 54:     }
 }
 [e ++ _variableRandonDeCuentaXD -> 1 `i ]
-[e $ <= _variableRandonDeCuentaXD -> 100 `i 369  ]
+[e $ <= _variableRandonDeCuentaXD -> 400 `i 369  ]
 [e :U 370 ]
 }
 "55

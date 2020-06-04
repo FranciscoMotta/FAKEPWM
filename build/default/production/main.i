@@ -5697,16 +5697,16 @@ void limpiaPuertos(void);
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0;
     limpiaPuertos();
-    counter = 50;
+    counter = 150;
 FAKE:
-    for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 100; variableRandonDeCuentaXD++) {
+    for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {
             LATBbits.LATB0 = 1;
         } else {
             LATBbits.LATB0 = 0;
         }
         if (PORTBbits.RB1 == 1 && PORTBbits.RB2 == 0) {
-            if (counter <= 100) {
+            if (counter <= 250) {
                 counter++;
                 _delay((unsigned long)((10)*(20000000/4000.0)));
             } else {
@@ -5714,7 +5714,7 @@ FAKE:
             }
         } else {
             if (PORTBbits.RB1 == 0 && PORTBbits.RB2 == 1) {
-                if (counter >= 0) {
+                if (counter >= 50) {
                     counter--;
                     _delay((unsigned long)((10)*(20000000/4000.0)));
                 } else {
@@ -5724,7 +5724,7 @@ FAKE:
                 counter = counter;
             }
         }
-        _delay((unsigned long)((5)*(20000000/4000.0)));
+        _delay((unsigned long)((50)*(20000000/4000000.0)));
     }
     goto FAKE;
     return;

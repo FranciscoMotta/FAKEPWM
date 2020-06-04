@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Thu Jun 04 00:05:11 2020
+                                                                                               Thu Jun 04 00:24:28 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F4550
@@ -64,18 +64,18 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
     50                           ; #config settings
     51  0000                     
     52                           	psect	cinit
-    53  007EFC                     __pcinit:
+    53  007EF6                     __pcinit:
     54                           	opt callstack 0
-    55  007EFC                     start_initialization:
+    55  007EF6                     start_initialization:
     56                           	opt callstack 0
-    57  007EFC                     __initialization:
+    57  007EF6                     __initialization:
     58                           	opt callstack 0
-    59  007EFC                     end_of_initialization:
+    59  007EF6                     end_of_initialization:
     60                           	opt callstack 0
-    61  007EFC                     __end_of__initialization:
+    61  007EF6                     __end_of__initialization:
     62                           	opt callstack 0
-    63  007EFC  0100               	movlb	0
-    64  007EFE  EF85  F03F         	goto	_main	;jump to C main() function
+    63  007EF6  0100               	movlb	0
+    64  007EF8  EF82  F03F         	goto	_main	;jump to C main() function
     65                           
     66                           	psect	cstackCOMRAM
     67  000001                     __pcstackCOMRAM:
@@ -129,249 +129,251 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    115 ;;
    116                           
    117                           	psect	text0
-   118  007F0A                     __ptext0:
+   118  007F04                     __ptext0:
    119                           	opt callstack 0
-   120  007F0A                     _main:
+   120  007F04                     _main:
    121                           	opt callstack 30
-   122  007F0A                     
+   122  007F04                     
    123                           ;main.c: 25:     limpiaPuertos();
-   124  007F0A  EC81  F03F         	call	_limpiaPuertos	;wreg free
-   125  007F0E                     
-   126                           ;main.c: 26:     counter = 50;
-   127  007F0E  0E00               	movlw	0
-   128  007F10  6E03               	movwf	(main@counter+1)^0,c
-   129  007F12  0E32               	movlw	50
-   130  007F14  6E02               	movwf	main@counter^0,c
-   131  007F16                     l715:
+   124  007F04  EC7E  F03F         	call	_limpiaPuertos	;wreg free
+   125  007F08                     
+   126                           ;main.c: 26:     counter = 150;
+   127  007F08  0E00               	movlw	0
+   128  007F0A  6E03               	movwf	(main@counter+1)^0,c
+   129  007F0C  0E96               	movlw	150
+   130  007F0E  6E02               	movwf	main@counter^0,c
+   131  007F10                     l715:
    132                           
-   133                           ;main.c: 28:     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 100; var
+   133                           ;main.c: 28:     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; var
       +                          iableRandonDeCuentaXD++) {
-   134  007F16  0E00               	movlw	0
-   135  007F18  6E05               	movwf	(main@variableRandonDeCuentaXD+1)^0,c
-   136  007F1A  0E00               	movlw	0
-   137  007F1C  6E04               	movwf	main@variableRandonDeCuentaXD^0,c
-   138  007F1E                     l721:
+   134  007F10  0E00               	movlw	0
+   135  007F12  6E05               	movwf	(main@variableRandonDeCuentaXD+1)^0,c
+   136  007F14  0E00               	movlw	0
+   137  007F16  6E04               	movwf	main@variableRandonDeCuentaXD^0,c
+   138  007F18                     l721:
    139                           
    140                           ;main.c: 29:         if (variableRandonDeCuentaXD <= counter) {
-   141  007F1E  5004               	movf	main@variableRandonDeCuentaXD^0,w,c
-   142  007F20  5C02               	subwf	main@counter^0,w,c
-   143  007F22  5003               	movf	(main@counter+1)^0,w,c
-   144  007F24  0A80               	xorlw	128
-   145  007F26  6E01               	movwf	??_main^0,c
-   146  007F28  5005               	movf	(main@variableRandonDeCuentaXD+1)^0,w,c
-   147  007F2A  0A80               	xorlw	128
-   148  007F2C  5801               	subwfb	??_main^0,w,c
-   149  007F2E  A0D8               	btfss	status,0,c
-   150  007F30  EF9C  F03F         	goto	u11
-   151  007F34  EF9E  F03F         	goto	u10
-   152  007F38                     u11:
-   153  007F38  EFA1  F03F         	goto	l18
-   154  007F3C                     u10:
-   155  007F3C                     
+   141  007F18  5004               	movf	main@variableRandonDeCuentaXD^0,w,c
+   142  007F1A  5C02               	subwf	main@counter^0,w,c
+   143  007F1C  5003               	movf	(main@counter+1)^0,w,c
+   144  007F1E  0A80               	xorlw	128
+   145  007F20  6E01               	movwf	??_main^0,c
+   146  007F22  5005               	movf	(main@variableRandonDeCuentaXD+1)^0,w,c
+   147  007F24  0A80               	xorlw	128
+   148  007F26  5801               	subwfb	??_main^0,w,c
+   149  007F28  A0D8               	btfss	status,0,c
+   150  007F2A  EF99  F03F         	goto	u11
+   151  007F2E  EF9B  F03F         	goto	u10
+   152  007F32                     u11:
+   153  007F32  EF9E  F03F         	goto	l18
+   154  007F36                     u10:
+   155  007F36                     
    156                           ;main.c: 30:             LATBbits.LATB0 = 1;
-   157  007F3C  808A               	bsf	138,0,c	;volatile
+   157  007F36  808A               	bsf	138,0,c	;volatile
    158                           
    159                           ;main.c: 31:         } else {
-   160  007F3E  EFA2  F03F         	goto	l19
-   161  007F42                     l18:
+   160  007F38  EF9F  F03F         	goto	l19
+   161  007F3C                     l18:
    162                           
    163                           ;main.c: 32:             LATBbits.LATB0 = 0;
-   164  007F42  908A               	bcf	138,0,c	;volatile
-   165  007F44                     l19:
+   164  007F3C  908A               	bcf	138,0,c	;volatile
+   165  007F3E                     l19:
    166                           
    167                           ;main.c: 34:         if (PORTBbits.RB1 == 1 && PORTBbits.RB2 == 0) {
-   168  007F44  A281               	btfss	129,1,c	;volatile
-   169  007F46  EFA7  F03F         	goto	u21
-   170  007F4A  EFA9  F03F         	goto	u20
-   171  007F4E                     u21:
-   172  007F4E  EFCA  F03F         	goto	l20
-   173  007F52                     u20:
-   174  007F52  B481               	btfsc	129,2,c	;volatile
-   175  007F54  EFAE  F03F         	goto	u31
-   176  007F58  EFB0  F03F         	goto	u30
-   177  007F5C                     u31:
-   178  007F5C  EFCA  F03F         	goto	l20
-   179  007F60                     u30:
-   180  007F60                     
-   181                           ;main.c: 35:             if (counter <= 100) {
-   182  007F60  BE03               	btfsc	(main@counter+1)^0,7,c
-   183  007F62  EFBE  F03F         	goto	u40
-   184  007F66  5003               	movf	(main@counter+1)^0,w,c
-   185  007F68  E107               	bnz	u41
-   186  007F6A  0E65               	movlw	101
-   187  007F6C  5C02               	subwf	main@counter^0,w,c
-   188  007F6E  B0D8               	btfsc	status,0,c
-   189  007F70  EFBC  F03F         	goto	u41
-   190  007F74  EFBE  F03F         	goto	u40
-   191  007F78                     u41:
-   192  007F78  EFE4  F03F         	goto	l741
-   193  007F7C                     u40:
-   194  007F7C                     
+   168  007F3E  A281               	btfss	129,1,c	;volatile
+   169  007F40  EFA4  F03F         	goto	u21
+   170  007F44  EFA6  F03F         	goto	u20
+   171  007F48                     u21:
+   172  007F48  EFC7  F03F         	goto	l20
+   173  007F4C                     u20:
+   174  007F4C  B481               	btfsc	129,2,c	;volatile
+   175  007F4E  EFAB  F03F         	goto	u31
+   176  007F52  EFAD  F03F         	goto	u30
+   177  007F56                     u31:
+   178  007F56  EFC7  F03F         	goto	l20
+   179  007F5A                     u30:
+   180  007F5A                     
+   181                           ;main.c: 35:             if (counter <= 250) {
+   182  007F5A  BE03               	btfsc	(main@counter+1)^0,7,c
+   183  007F5C  EFBB  F03F         	goto	u40
+   184  007F60  5003               	movf	(main@counter+1)^0,w,c
+   185  007F62  E107               	bnz	u41
+   186  007F64  0EFB               	movlw	251
+   187  007F66  5C02               	subwf	main@counter^0,w,c
+   188  007F68  B0D8               	btfsc	status,0,c
+   189  007F6A  EFB9  F03F         	goto	u41
+   190  007F6E  EFBB  F03F         	goto	u40
+   191  007F72                     u41:
+   192  007F72  EFE8  F03F         	goto	l741
+   193  007F76                     u40:
+   194  007F76                     
    195                           ;main.c: 36:                 counter++;
-   196  007F7C  4A02               	infsnz	main@counter^0,f,c
-   197  007F7E  2A03               	incf	(main@counter+1)^0,f,c
-   198  007F80                     l731:
+   196  007F76  4A02               	infsnz	main@counter^0,f,c
+   197  007F78  2A03               	incf	(main@counter+1)^0,f,c
+   198  007F7A                     l731:
    199                           
    200                           ;main.c: 37:                 _delay((unsigned long)((10)*(20000000/4000.0)));
-   201  007F80  0E41               	movlw	65
-   202  007F82  6E01               	movwf	??_main^0,c
-   203  007F84  0EEE               	movlw	238
-   204  007F86                     u97:
-   205  007F86  2EE8               	decfsz	wreg,f,c
-   206  007F88  D7FE               	bra	u97
-   207  007F8A  2E01               	decfsz	??_main^0,f,c
-   208  007F8C  D7FC               	bra	u97
-   209  007F8E  D000               	nop2	
+   201  007F7A  0E41               	movlw	65
+   202  007F7C  6E01               	movwf	??_main^0,c
+   203  007F7E  0EEE               	movlw	238
+   204  007F80                     u97:
+   205  007F80  2EE8               	decfsz	wreg,f,c
+   206  007F82  D7FE               	bra	u97
+   207  007F84  2E01               	decfsz	??_main^0,f,c
+   208  007F86  D7FC               	bra	u97
+   209  007F88  D000               	nop2	
    210                           
    211                           ;main.c: 38:             } else {
-   212  007F90  EFE4  F03F         	goto	l741
-   213  007F94                     l20:
+   212  007F8A  EFE8  F03F         	goto	l741
+   213  007F8E                     l20:
    214                           
    215                           ;main.c: 42:             if (PORTBbits.RB1 == 0 && PORTBbits.RB2 == 1) {
-   216  007F94  B281               	btfsc	129,1,c	;volatile
-   217  007F96  EFCF  F03F         	goto	u51
-   218  007F9A  EFD1  F03F         	goto	u50
-   219  007F9E                     u51:
-   220  007F9E  EFE4  F03F         	goto	l741
-   221  007FA2                     u50:
-   222  007FA2  A481               	btfss	129,2,c	;volatile
-   223  007FA4  EFD6  F03F         	goto	u61
-   224  007FA8  EFD8  F03F         	goto	u60
-   225  007FAC                     u61:
-   226  007FAC  EFE4  F03F         	goto	l741
-   227  007FB0                     u60:
-   228  007FB0                     
-   229                           ;main.c: 43:                 if (counter >= 0) {
-   230  007FB0  BE03               	btfsc	(main@counter+1)^0,7,c
-   231  007FB2  EFDD  F03F         	goto	u71
-   232  007FB6  EFDF  F03F         	goto	u70
-   233  007FBA                     u71:
-   234  007FBA  EFE4  F03F         	goto	l741
-   235  007FBE                     u70:
-   236  007FBE                     
-   237                           ;main.c: 44:                     counter--;
-   238  007FBE  0602               	decf	main@counter^0,f,c
-   239  007FC0  A0D8               	btfss	status,0,c
-   240  007FC2  0603               	decf	(main@counter+1)^0,f,c
-   241  007FC4  EFC0  F03F         	goto	l731
-   242  007FC8                     l741:
-   243                           
-   244                           ;main.c: 53:         _delay((unsigned long)((5)*(20000000/4000.0)));
-   245  007FC8  0E21               	movlw	33
-   246  007FCA  6E01               	movwf	??_main^0,c
-   247  007FCC  0E76               	movlw	118
-   248  007FCE                     u107:
-   249  007FCE  2EE8               	decfsz	wreg,f,c
-   250  007FD0  D7FE               	bra	u107
-   251  007FD2  2E01               	decfsz	??_main^0,f,c
-   252  007FD4  D7FC               	bra	u107
-   253  007FD6  D000               	nop2	
-   254  007FD8                     
-   255                           ;main.c: 54:     }
-   256  007FD8  4A04               	infsnz	main@variableRandonDeCuentaXD^0,f,c
-   257  007FDA  2A05               	incf	(main@variableRandonDeCuentaXD+1)^0,f,c
-   258  007FDC  BE05               	btfsc	(main@variableRandonDeCuentaXD+1)^0,7,c
-   259  007FDE  EFFA  F03F         	goto	u81
-   260  007FE2  5005               	movf	(main@variableRandonDeCuentaXD+1)^0,w,c
-   261  007FE4  E109               	bnz	u80
-   262  007FE6  0E65               	movlw	101
-   263  007FE8  5C04               	subwf	main@variableRandonDeCuentaXD^0,w,c
-   264  007FEA  A0D8               	btfss	status,0,c
-   265  007FEC  EFFA  F03F         	goto	u81
-   266  007FF0  EFFC  F03F         	goto	u80
-   267  007FF4                     u81:
-   268  007FF4  EF8F  F03F         	goto	l721
-   269  007FF8                     u80:
-   270  007FF8  EF8B  F03F         	goto	l715
-   271  007FFC  EF00  F000         	goto	start
-   272  008000                     __end_of_main:
-   273                           	opt callstack 0
-   274                           
-   275 ;; *************** function _limpiaPuertos *****************
-   276 ;; Defined at:
-   277 ;;		line 59 in file "main.c"
-   278 ;; Parameters:    Size  Location     Type
-   279 ;;		None
-   280 ;; Auto vars:     Size  Location     Type
+   216  007F8E  B281               	btfsc	129,1,c	;volatile
+   217  007F90  EFCC  F03F         	goto	u51
+   218  007F94  EFCE  F03F         	goto	u50
+   219  007F98                     u51:
+   220  007F98  EFE8  F03F         	goto	l741
+   221  007F9C                     u50:
+   222  007F9C  A481               	btfss	129,2,c	;volatile
+   223  007F9E  EFD3  F03F         	goto	u61
+   224  007FA2  EFD5  F03F         	goto	u60
+   225  007FA6                     u61:
+   226  007FA6  EFE8  F03F         	goto	l741
+   227  007FAA                     u60:
+   228  007FAA                     
+   229                           ;main.c: 43:                 if (counter >= 50) {
+   230  007FAA  BE03               	btfsc	(main@counter+1)^0,7,c
+   231  007FAC  EFE1  F03F         	goto	u71
+   232  007FB0  5003               	movf	(main@counter+1)^0,w,c
+   233  007FB2  E109               	bnz	u70
+   234  007FB4  0E32               	movlw	50
+   235  007FB6  5C02               	subwf	main@counter^0,w,c
+   236  007FB8  A0D8               	btfss	status,0,c
+   237  007FBA  EFE1  F03F         	goto	u71
+   238  007FBE  EFE3  F03F         	goto	u70
+   239  007FC2                     u71:
+   240  007FC2  EFE8  F03F         	goto	l741
+   241  007FC6                     u70:
+   242  007FC6                     
+   243                           ;main.c: 44:                     counter--;
+   244  007FC6  0602               	decf	main@counter^0,f,c
+   245  007FC8  A0D8               	btfss	status,0,c
+   246  007FCA  0603               	decf	(main@counter+1)^0,f,c
+   247  007FCC  EFBD  F03F         	goto	l731
+   248  007FD0                     l741:
+   249                           
+   250                           ;main.c: 53:         _delay((unsigned long)((50)*(20000000/4000000.0)));
+   251  007FD0  0E53               	movlw	83
+   252  007FD2                     u107:
+   253  007FD2  2EE8               	decfsz	wreg,f,c
+   254  007FD4  D7FE               	bra	u107
+   255  007FD6  F000               	nop	
+   256  007FD8                     
+   257                           ;main.c: 54:     }
+   258  007FD8  4A04               	infsnz	main@variableRandonDeCuentaXD^0,f,c
+   259  007FDA  2A05               	incf	(main@variableRandonDeCuentaXD+1)^0,f,c
+   260  007FDC  BE05               	btfsc	(main@variableRandonDeCuentaXD+1)^0,7,c
+   261  007FDE  EFFA  F03F         	goto	u81
+   262  007FE2  0E91               	movlw	145
+   263  007FE4  5C04               	subwf	main@variableRandonDeCuentaXD^0,w,c
+   264  007FE6  0E01               	movlw	1
+   265  007FE8  5805               	subwfb	(main@variableRandonDeCuentaXD+1)^0,w,c
+   266  007FEA  A0D8               	btfss	status,0,c
+   267  007FEC  EFFA  F03F         	goto	u81
+   268  007FF0  EFFC  F03F         	goto	u80
+   269  007FF4                     u81:
+   270  007FF4  EF8C  F03F         	goto	l721
+   271  007FF8                     u80:
+   272  007FF8  EF88  F03F         	goto	l715
+   273  007FFC  EF00  F000         	goto	start
+   274  008000                     __end_of_main:
+   275                           	opt callstack 0
+   276                           
+   277 ;; *************** function _limpiaPuertos *****************
+   278 ;; Defined at:
+   279 ;;		line 59 in file "main.c"
+   280 ;; Parameters:    Size  Location     Type
    281 ;;		None
-   282 ;; Return value:  Size  Location     Type
-   283 ;;                  1    wreg      void 
-   284 ;; Registers used:
-   285 ;;		None
-   286 ;; Tracked objects:
-   287 ;;		On entry : 0/0
-   288 ;;		On exit  : 0/0
-   289 ;;		Unchanged: 0/0
-   290 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   291 ;;      Params:         0       0       0       0       0       0       0       0       0
-   292 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   293 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   294 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   295 ;;Total ram usage:        0 bytes
-   296 ;; Hardware stack levels used:    1
-   297 ;; This function calls:
-   298 ;;		Nothing
-   299 ;; This function is called by:
-   300 ;;		_main
-   301 ;; This function uses a non-reentrant model
-   302 ;;
-   303                           
-   304                           	psect	text1
-   305  007F02                     __ptext1:
-   306                           	opt callstack 0
-   307  007F02                     _limpiaPuertos:
-   308                           	opt callstack 30
-   309  007F02                     
-   310                           ;main.c: 60:     TRISBbits.RB0 = 0;
-   311  007F02  9093               	bcf	147,0,c	;volatile
-   312                           
-   313                           ;main.c: 61:     TRISBbits.RB1 = 1;
-   314  007F04  8293               	bsf	147,1,c	;volatile
-   315                           
-   316                           ;main.c: 62:     TRISBbits.RB2 = 1;
-   317  007F06  8493               	bsf	147,2,c	;volatile
-   318  007F08  0012               	return		;funcret
-   319  007F0A                     __end_of_limpiaPuertos:
-   320                           	opt callstack 0
-   321  0000                     
-   322                           	psect	rparam
-   323  0000                     tosu	equ	0xFFF
-   324                           tosh	equ	0xFFE
-   325                           tosl	equ	0xFFD
-   326                           stkptr	equ	0xFFC
-   327                           pclatu	equ	0xFFB
-   328                           pclath	equ	0xFFA
-   329                           pcl	equ	0xFF9
-   330                           tblptru	equ	0xFF8
-   331                           tblptrh	equ	0xFF7
-   332                           tblptrl	equ	0xFF6
-   333                           tablat	equ	0xFF5
-   334                           prodh	equ	0xFF4
-   335                           prodl	equ	0xFF3
-   336                           indf0	equ	0xFEF
-   337                           postinc0	equ	0xFEE
-   338                           postdec0	equ	0xFED
-   339                           preinc0	equ	0xFEC
-   340                           plusw0	equ	0xFEB
-   341                           fsr0h	equ	0xFEA
-   342                           fsr0l	equ	0xFE9
-   343                           wreg	equ	0xFE8
-   344                           indf1	equ	0xFE7
-   345                           postinc1	equ	0xFE6
-   346                           postdec1	equ	0xFE5
-   347                           preinc1	equ	0xFE4
-   348                           plusw1	equ	0xFE3
-   349                           fsr1h	equ	0xFE2
-   350                           fsr1l	equ	0xFE1
-   351                           bsr	equ	0xFE0
-   352                           indf2	equ	0xFDF
-   353                           postinc2	equ	0xFDE
-   354                           postdec2	equ	0xFDD
-   355                           preinc2	equ	0xFDC
-   356                           plusw2	equ	0xFDB
-   357                           fsr2h	equ	0xFDA
-   358                           fsr2l	equ	0xFD9
-   359                           status	equ	0xFD8
+   282 ;; Auto vars:     Size  Location     Type
+   283 ;;		None
+   284 ;; Return value:  Size  Location     Type
+   285 ;;                  1    wreg      void 
+   286 ;; Registers used:
+   287 ;;		None
+   288 ;; Tracked objects:
+   289 ;;		On entry : 0/0
+   290 ;;		On exit  : 0/0
+   291 ;;		Unchanged: 0/0
+   292 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   293 ;;      Params:         0       0       0       0       0       0       0       0       0
+   294 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   295 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   296 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   297 ;;Total ram usage:        0 bytes
+   298 ;; Hardware stack levels used:    1
+   299 ;; This function calls:
+   300 ;;		Nothing
+   301 ;; This function is called by:
+   302 ;;		_main
+   303 ;; This function uses a non-reentrant model
+   304 ;;
+   305                           
+   306                           	psect	text1
+   307  007EFC                     __ptext1:
+   308                           	opt callstack 0
+   309  007EFC                     _limpiaPuertos:
+   310                           	opt callstack 30
+   311  007EFC                     
+   312                           ;main.c: 60:     TRISBbits.RB0 = 0;
+   313  007EFC  9093               	bcf	147,0,c	;volatile
+   314                           
+   315                           ;main.c: 61:     TRISBbits.RB1 = 1;
+   316  007EFE  8293               	bsf	147,1,c	;volatile
+   317                           
+   318                           ;main.c: 62:     TRISBbits.RB2 = 1;
+   319  007F00  8493               	bsf	147,2,c	;volatile
+   320  007F02  0012               	return		;funcret
+   321  007F04                     __end_of_limpiaPuertos:
+   322                           	opt callstack 0
+   323  0000                     
+   324                           	psect	rparam
+   325  0000                     tosu	equ	0xFFF
+   326                           tosh	equ	0xFFE
+   327                           tosl	equ	0xFFD
+   328                           stkptr	equ	0xFFC
+   329                           pclatu	equ	0xFFB
+   330                           pclath	equ	0xFFA
+   331                           pcl	equ	0xFF9
+   332                           tblptru	equ	0xFF8
+   333                           tblptrh	equ	0xFF7
+   334                           tblptrl	equ	0xFF6
+   335                           tablat	equ	0xFF5
+   336                           prodh	equ	0xFF4
+   337                           prodl	equ	0xFF3
+   338                           indf0	equ	0xFEF
+   339                           postinc0	equ	0xFEE
+   340                           postdec0	equ	0xFED
+   341                           preinc0	equ	0xFEC
+   342                           plusw0	equ	0xFEB
+   343                           fsr0h	equ	0xFEA
+   344                           fsr0l	equ	0xFE9
+   345                           wreg	equ	0xFE8
+   346                           indf1	equ	0xFE7
+   347                           postinc1	equ	0xFE6
+   348                           postdec1	equ	0xFE5
+   349                           preinc1	equ	0xFE4
+   350                           plusw1	equ	0xFE3
+   351                           fsr1h	equ	0xFE2
+   352                           fsr1l	equ	0xFE1
+   353                           bsr	equ	0xFE0
+   354                           indf2	equ	0xFDF
+   355                           postinc2	equ	0xFDE
+   356                           postdec2	equ	0xFDD
+   357                           preinc2	equ	0xFDC
+   358                           plusw2	equ	0xFDB
+   359                           fsr2h	equ	0xFDA
+   360                           fsr2l	equ	0xFD9
+   361                           status	equ	0xFD8
 
 
 Data Sizes:
@@ -485,26 +487,26 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Thu Jun 04 00:05:11 2020
+Symbol Table                                                                                   Thu Jun 04 00:24:28 2020
 
-                          l20 7F94                            l31 7F08                            l18 7F42  
-                          l19 7F44                            u10 7F3C                            u11 7F38  
-                          u20 7F52                            u21 7F4E                            u30 7F60  
-                          u31 7F5C                            u40 7F7C                            u41 7F78  
-                          u50 7FA2                            u51 7F9E                            u60 7FB0  
-                          u61 7FAC                            u70 7FBE                            u71 7FBA  
-                          u80 7FF8                            u81 7FF4                            u97 7F86  
+                          l20 7F8E                            l31 7F02                            l18 7F3C  
+                          l19 7F3E                            u10 7F36                            u11 7F32  
+                          u20 7F4C                            u21 7F48                            u30 7F5A  
+                          u31 7F56                            u40 7F76                            u41 7F72  
+                          u50 7F9C                            u51 7F98                            u60 7FAA  
+                          u61 7FA6                            u70 7FC6                            u71 7FC2  
+                          u80 7FF8                            u81 7FF4                            u97 7F80  
                  __CFG_BORV$3 000000                  __CFG_CP0$OFF 000000                  __CFG_CP1$OFF 000000  
-                __CFG_CP2$OFF 000000                  __CFG_CP3$OFF 000000                           l711 7F0A  
-                         l721 7F1E                           l713 7F0E                           l707 7F02  
-                         l731 7F80                           l723 7F3C                           l715 7F16  
-                         l733 7FA2                           l741 7FC8                           l725 7F52  
-                         l709 7F0A                           l743 7FD8                           l735 7FB0  
-                         l727 7F60                           l737 7FBE                           l729 7F7C  
-                __CFG_CPB$OFF 000000                           u107 7FCE                  __CFG_CPD$OFF 000000  
+                __CFG_CP2$OFF 000000                  __CFG_CP3$OFF 000000                           l711 7F04  
+                         l721 7F18                           l713 7F08                           l707 7EFC  
+                         l731 7F7A                           l723 7F36                           l715 7F10  
+                         l733 7F9C                           l741 7FD0                           l725 7F4C  
+                         l709 7F04                           l743 7FD8                           l735 7FAA  
+                         l727 7F5A                           l737 7FC6                           l729 7F76  
+                __CFG_CPB$OFF 000000                           u107 7FD2                  __CFG_CPD$OFF 000000  
                 __CFG_BOR$OFF 000000                           wreg 000FE8                  __CFG_FOSC$HS 000000  
                 __CFG_LVP$OFF 000000                  __CFG_WDT$OFF 000000                   main@counter 0002  
-                        _main 7F0A                          start 0000                 __CFG_IESO$OFF 000000  
+                        _main 7F04                          start 0000                 __CFG_IESO$OFF 000000  
                __CFG_MCLRE$ON 000000                  ___param_bank 000000                 __CFG_PLLDIV$1 000000  
                        ?_main 0001                 __CFG_USBDIV$1 000000                 __CFG_PWRT$OFF 000000  
                __CFG_WRT0$OFF 000000                 __CFG_WRT1$OFF 000000                 __CFG_WRT2$OFF 000000  
@@ -512,15 +514,15 @@ Symbol Table                                                                    
               __CFG_EBTR1$OFF 000000                __CFG_EBTR2$OFF 000000                __CFG_EBTR3$OFF 000000  
                __CFG_WRTB$OFF 000000                 __CFG_WRTC$OFF 000000                 __CFG_WRTD$OFF 000000  
               __CFG_EBTRB$OFF 000000                         status 000FD8                __CFG_ICPRT$OFF 000000  
-             __initialization 7EFC                  __end_of_main 8000                        ??_main 0001  
+             __initialization 7EF6                  __end_of_main 8000                        ??_main 0001  
                __activetblptr 000000               __CFG_CCP2MX$OFF 000000                __CFG_XINST$OFF 000000  
-                  __accesstop 0060       __end_of__initialization 7EFC               __CFG_PBADEN$OFF 000000  
+                  __accesstop 0060       __end_of__initialization 7EF6               __CFG_PBADEN$OFF 000000  
                ___rparam_used 000001                __pcstackCOMRAM 0001        __size_of_limpiaPuertos 0008  
-               _limpiaPuertos 7F02               __CFG_VREGEN$OFF 000000                       __Hparam 0000  
-                     __Lparam 0000               __CFG_STVREN$OFF 000000                       __pcinit 7EFC  
-                     __ramtop 0800                       __ptext0 7F0A                       __ptext1 7F02  
-              ?_limpiaPuertos 0001          end_of_initialization 7EFC                     _PORTBbits 000F81  
-main@variableRandonDeCuentaXD 0004                     _TRISBbits 000F93           start_initialization 7EFC  
+               _limpiaPuertos 7EFC               __CFG_VREGEN$OFF 000000                       __Hparam 0000  
+                     __Lparam 0000               __CFG_STVREN$OFF 000000                       __pcinit 7EF6  
+                     __ramtop 0800                       __ptext0 7F04                       __ptext1 7EFC  
+              ?_limpiaPuertos 0001          end_of_initialization 7EF6                     _PORTBbits 000F81  
+main@variableRandonDeCuentaXD 0004                     _TRISBbits 000F93           start_initialization 7EF6  
              ??_limpiaPuertos 0001              __CFG_LPT1OSC$OFF 000000                      _LATBbits 000F8A  
             __CFG_WDTPS$32768 000000                      __Hrparam 0000                      __Lrparam 0000  
-               __size_of_main 00F6         __CFG_CPUDIV$OSC1_PLL2 000000         __end_of_limpiaPuertos 7F0A  
+               __size_of_main 00FC         __CFG_CPUDIV$OSC1_PLL2 000000         __end_of_limpiaPuertos 7F04  
