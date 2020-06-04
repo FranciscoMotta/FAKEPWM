@@ -206,7 +206,7 @@ cinit 7EEA 7EEF CODE 7EEA 0
 %locals
 dist/default/production\fakePWM.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-C:\Users\HP\AppData\Local\Temp\si2c.s
+C:\Users\HP\AppData\Local\Temp\sn2o.s
 537 7EEA 0 CODE 0
 539 7EEA 0 CODE 0
 542 7EEA 0 CODE 0

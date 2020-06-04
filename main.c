@@ -14,8 +14,8 @@
 #define LED_PWM LATBbits.LATB0 
 #define UP PORTBbits.RB1
 #define DOWM PORTBbits.RB2
-#define TOPE 50 //Valor max para los 2.5 milis  
-#define PISO 2 //Valor piso para los 0.5 milis
+#define TOPE 250 //Valor max para los 2.5 milis  
+#define PISO 50 //Valor piso para los 0.5 milis
 
 
 void limpiaPuertos(void); //Función para inicializar los puertos de control
@@ -23,36 +23,36 @@ void limpiaPuertos(void); //Función para inicializar los puertos de control
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0; // Variables de control 
     limpiaPuertos();
-    counter = 22;
+    counter = 200;
 FAKE:
-    for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; variableRandonDeCuentaXD++) {
+    for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 2000; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {
             LED_PWM = 1; // Encendemos el LED     
         } else {
             LED_PWM = 0; // Apagamos el LED
         }
         if (UP == 1 && DOWM == 0) { // Preguntamos por los botones de cambio
-            if (counter <= TOPE) {
-                counter++;
+            if (counter <= TOPE) { // Ponemos el m�ximo de 2.5 ms para el servo motor
+                counter++; //En el caso de que sea menor podremos aumentar la cuenta para el periodo del pwm
             } else {
-                counter = counter;
+                counter = counter; //En otro caso mantenemos el valor del counter
             }
 SEN:
-            if (UP == 1) goto SEN;
+            if (UP == 1) goto SEN; // Funcion para evitar que entre ruido de conteo
         } else {
-            if (UP == 0 && DOWM == 1) {
-                if (counter >= PISO) {
-                    counter--;
+            if (UP == 0 && DOWM == 1) { //Preguntamos por la cuenta de descenso 
+                if (counter >= PISO) { //En el caso de que la cuenta sea mayor o igual que el PISO para los 0,5ms
+                    counter--; //Podremos decrementar la cuenta 
                 } else {
-                    counter = counter;
+                    counter = counter; //De otro caso la variable se mantiene con el valor inicial 
                 }
 SEN1:
-                if (DOWM == 1) goto SEN1;
+                if (DOWM == 1) goto SEN1; //Funcion para evitar el ruido de conteo
             } else {
                 counter = counter;
             }
         }
-        __delay_us(50);
+        __delay_us(10); //Tiempo base de 50 ms 
     }
     goto FAKE;
     return;
