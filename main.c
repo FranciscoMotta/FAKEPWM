@@ -18,7 +18,7 @@
 #define PISO 50 //Valor piso para los 0.5 milis
 
 
-void limpiaPuertos(void); //Función para inicializar los puertos de control
+void limpiaPuertos(void); //FunciÃ³n para inicializar los puertos de control
 
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0; // Variables de control 
@@ -32,7 +32,7 @@ FAKE:
             LED_PWM = 0; // Apagamos el LED
         }
         if (UP == 1 && DOWM == 0) { // Preguntamos por los botones de cambio
-            if (counter <= TOPE) { // Ponemos el m�ximo de 2.5 ms para el servo motor
+            if (counter <= TOPE) { // Ponemos el máximo de 2.5 ms para el servo motor
                 counter++; //En el caso de que sea menor podremos aumentar la cuenta para el periodo del pwm
             } else {
                 counter = counter; //En otro caso mantenemos el valor del counter
@@ -49,17 +49,18 @@ SEN:
 SEN1:
                 if (DOWM == 1) goto SEN1; //Funcion para evitar el ruido de conteo
             } else {
-                counter = counter;
+                counter = counter; // En caso de que sea un combinación con UP & DOWN como por ejemplo: 01 o 10
+                //No se modifica el valor del counter
             }
         }
-        __delay_us(10); //Tiempo base de 50 ms 
+        __delay_us(10); //Tiempo base de 10 ms 
     }
     goto FAKE;
     return;
 }
 
 void limpiaPuertos(void) {
-    TRISBbits.RB0 = 0; // Ponemos como salida el pin que servirá de pwm
+    TRISBbits.RB0 = 0; // Ponemos como salida el pin que servirÃ¡ de pwm
     TRISBbits.RB1 = 1; // Ponemos en 1 el pin RB1 para que sea entrada 
     TRISBbits.RB2 = 1; // Ponemos en 1 al pin RB2 para que sea entrada 
 }
