@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\fakePWM.X.production.sym \
   --cmf=dist/default/production\fakePWM.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\HP\AppData\Local\Temp\s3hc.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\HP\AppData\Local\Temp\sl18.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/fakePWM.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=060h-07FFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0800h-08FFhx120 \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\HP\AppData\Local\Temp\s3hc.o \
+  C:\Users\HP\AppData\Local\Temp\sl18.o \
   dist/default/production\fakePWM.X.production.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\HP\AppData\Local\Temp\s3hc.o
+C:\Users\HP\AppData\Local\Temp\sl18.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0

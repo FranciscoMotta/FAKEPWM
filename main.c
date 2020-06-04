@@ -23,7 +23,7 @@ void limpiaPuertos(void);
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0;
     limpiaPuertos();
-    counter = 150;
+    counter = 100;
 FAKE:
     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {
