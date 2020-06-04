@@ -9,7 +9,7 @@
 #include <xc.h>
 #include "configuraciones.h"
 
-#define _XTAL_FREQ 20000000
+#define _XTAL_FREQ 20000000UL
 
 #define LED_PWM LATBbits.LATB0 
 #define UP PORTBbits.RB1
