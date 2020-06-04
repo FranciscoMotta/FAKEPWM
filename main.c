@@ -14,8 +14,8 @@
 #define LED_PWM LATBbits.LATB0 
 #define UP PORTBbits.RB1
 #define DOWM PORTBbits.RB2
-#define TOPE 250 //Valor max para los 2.5 milis  
-#define PISO 50 //Valor piso para los 0.5 milis
+#define TOPE 50 //Valor max para los 2.5 milis  
+#define PISO 2 //Valor piso para los 0.5 milis
 
 
 void limpiaPuertos(void); //FunciÃ³n para inicializar los puertos de control
@@ -23,9 +23,9 @@ void limpiaPuertos(void); //FunciÃ³n para inicializar los puertos de control
 void main(void) {
     int counter, variableRandonDeCuentaXD = 0; // Variables de control 
     limpiaPuertos();
-    counter = 150;
+    counter = 22;
 FAKE:
-    for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 2000; variableRandonDeCuentaXD++) {
+    for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {
             LED_PWM = 1; // Encendemos el LED     
         } else {
@@ -53,7 +53,7 @@ SEN1:
                 //No se modifica el valor del counter
             }
         }
-        __delay_us(10); //Tiempo base de 10 ms 
+        __delay_us(50); //Tiempo base de 10 ms 
     }
     goto FAKE;
     return;

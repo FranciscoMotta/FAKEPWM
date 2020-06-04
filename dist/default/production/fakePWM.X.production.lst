@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Thu Jun 04 13:22:53 2020
+                                                                                               Thu Jun 04 13:25:12 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F4550
@@ -137,15 +137,15 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    123                           ;main.c: 25:     limpiaPuertos();
    124  007EF8  EC78  F03F         	call	_limpiaPuertos	;wreg free
    125  007EFC                     
-   126                           ;main.c: 26:     counter = 150;
+   126                           ;main.c: 26:     counter = 22;
    127  007EFC  0E00               	movlw	0
    128  007EFE  6E03               	movwf	(main@counter+1)^0,c
-   129  007F00  0E96               	movlw	150
+   129  007F00  0E16               	movlw	22
    130  007F02  6E02               	movwf	main@counter^0,c
    131  007F04                     l719:
    132                           
-   133                           ;main.c: 28:     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 2000; va
-      +                          riableRandonDeCuentaXD++) {
+   133                           ;main.c: 28:     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 400; var
+      +                          iableRandonDeCuentaXD++) {
    134  007F04  0E00               	movlw	0
    135  007F06  6E05               	movwf	(main@variableRandonDeCuentaXD+1)^0,c
    136  007F08  0E00               	movlw	0
@@ -193,12 +193,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    178  007F4A  EFC0  F03F         	goto	l20
    179  007F4E                     u30:
    180  007F4E                     
-   181                           ;main.c: 35:             if (counter <= 250) {
+   181                           ;main.c: 35:             if (counter <= 50) {
    182  007F4E  BE03               	btfsc	(main@counter+1)^0,7,c
    183  007F50  EFB5  F03F         	goto	u40
    184  007F54  5003               	movf	(main@counter+1)^0,w,c
    185  007F56  E107               	bnz	u41
-   186  007F58  0EFB               	movlw	251
+   186  007F58  0E33               	movlw	51
    187  007F5A  5C02               	subwf	main@counter^0,w,c
    188  007F5C  B0D8               	btfsc	status,0,c
    189  007F5E  EFB3  F03F         	goto	u41
@@ -236,12 +236,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    221  007F98  EFE8  F03F         	goto	l745
    222  007F9C                     u70:
    223  007F9C                     
-   224                           ;main.c: 44:                 if (counter >= 50) {
+   224                           ;main.c: 44:                 if (counter >= 2) {
    225  007F9C  BE03               	btfsc	(main@counter+1)^0,7,c
    226  007F9E  EFDA  F03F         	goto	u81
    227  007FA2  5003               	movf	(main@counter+1)^0,w,c
    228  007FA4  E109               	bnz	u80
-   229  007FA6  0E32               	movlw	50
+   229  007FA6  0E02               	movlw	2
    230  007FA8  5C02               	subwf	main@counter^0,w,c
    231  007FAA  A0D8               	btfss	status,0,c
    232  007FAC  EFDA  F03F         	goto	u81
@@ -266,21 +266,21 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    251  007FCC  EFDF  F03F         	goto	l29
    252  007FD0                     l745:
    253                           
-   254                           ;main.c: 56:         _delay((unsigned long)((10)*(20000000/4000000.0)));
-   255  007FD0  0E10               	movlw	16
+   254                           ;main.c: 56:         _delay((unsigned long)((50)*(20000000/4000000.0)));
+   255  007FD0  0E53               	movlw	83
    256  007FD2                     u117:
    257  007FD2  2EE8               	decfsz	wreg,f,c
    258  007FD4  D7FE               	bra	u117
-   259  007FD6  D000               	nop2	
+   259  007FD6  F000               	nop	
    260  007FD8                     
    261                           ;main.c: 57:     }
    262  007FD8  4A04               	infsnz	main@variableRandonDeCuentaXD^0,f,c
    263  007FDA  2A05               	incf	(main@variableRandonDeCuentaXD+1)^0,f,c
    264  007FDC  BE05               	btfsc	(main@variableRandonDeCuentaXD+1)^0,7,c
    265  007FDE  EFFA  F03F         	goto	u101
-   266  007FE2  0ED1               	movlw	209
+   266  007FE2  0E91               	movlw	145
    267  007FE4  5C04               	subwf	main@variableRandonDeCuentaXD^0,w,c
-   268  007FE6  0E07               	movlw	7
+   268  007FE6  0E01               	movlw	1
    269  007FE8  5805               	subwfb	(main@variableRandonDeCuentaXD+1)^0,w,c
    270  007FEA  A0D8               	btfss	status,0,c
    271  007FEC  EFFA  F03F         	goto	u101
@@ -491,7 +491,7 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Thu Jun 04 13:22:53 2020
+Symbol Table                                                                                   Thu Jun 04 13:25:12 2020
 
                           l20 7F80                            l23 7F6E                            l18 7F30  
                           l35 7EF6                            l19 7F32                            l29 7FBE  
