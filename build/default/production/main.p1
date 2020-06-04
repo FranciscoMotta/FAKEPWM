@@ -1,5 +1,42 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
+"20 main.c
+[; ;main.c: 20: void limpiaPuertos(void);
+[v _limpiaPuertos `(v ~T0 @X0 0 ef ]
+"3079 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 3079:     struct {
+[s S130 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S130 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"3089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 3089:     struct {
+[s S131 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S131 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"3078
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 3078: typedef union {
+[u S129 `S130 1 `S131 1 ]
+[n S129 . . . ]
+"3100
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 3100: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS129 ~T0 @X0 0 e@3978 ]
+[v F3152 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF3152 ~T0 @X0 0 e ]
+[p i __delay ]
+"3636 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 3636:     struct {
+[s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S148 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"3646
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 3646:     struct {
+[s S149 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S149 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"3635
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 3635: typedef union {
+[u S147 `S148 1 `S149 1 ]
+[n S147 . . . ]
+"3657
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 3657: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
+[v _TRISBbits `VS147 ~T0 @X0 0 e@3987 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -587,16 +624,81 @@ Version 4.0 HI-TECH Software Intermediate Code
 "76
 [p x EBTRB = OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"15 main.c
-[; ;main.c: 15: void main(void) {
+"22 main.c
+[; ;main.c: 22: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"16
-[; ;main.c: 16:     return;
+"23
+[; ;main.c: 23:     int counter, variableRandonDeCuentaXD = 0;
+[v _counter `i ~T0 @X0 1 a ]
+[v _variableRandonDeCuentaXD `i ~T0 @X0 1 a ]
+[e = _variableRandonDeCuentaXD -> 0 `i ]
+"24
+[; ;main.c: 24:     limpiaPuertos();
+[e ( _limpiaPuertos ..  ]
+"25
+[; ;main.c: 25:     for (variableRandonDeCuentaXD = 0 ; variableRandonDeCuentaXD <= 100 ; variableRandonDeCuentaXD ++){
+{
+[e = _variableRandonDeCuentaXD -> 0 `i ]
+[e $ <= _variableRandonDeCuentaXD -> 100 `i 368  ]
+[e $U 369  ]
+[e :U 368 ]
+{
+"26
+[; ;main.c: 26:         if (variableRandonDeCuentaXD <= 50){
+[e $ ! <= _variableRandonDeCuentaXD -> 50 `i 371  ]
+{
+"27
+[; ;main.c: 27:             LATBbits.LATB0 = 1;
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+"28
+[; ;main.c: 28:         } else {
+}
+[e $U 372  ]
+[e :U 371 ]
+{
+"29
+[; ;main.c: 29:             LATBbits.LATB0 = 0;
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+"30
+[; ;main.c: 30:         }
+}
+[e :U 372 ]
+"31
+[; ;main.c: 31:         _delay((unsigned long)((5)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"32
+[; ;main.c: 32:     }
+}
+[e ++ _variableRandonDeCuentaXD -> 1 `i ]
+[e $ <= _variableRandonDeCuentaXD -> 100 `i 368  ]
+[e :U 369 ]
+}
+"33
+[; ;main.c: 33:     return;
 [e $UE 367  ]
-"17
-[; ;main.c: 17: }
+"34
+[; ;main.c: 34: }
 [e :UE 367 ]
+}
+"36
+[; ;main.c: 36: void limpiaPuertos(void) {
+[v _limpiaPuertos `(v ~T0 @X0 1 ef ]
+{
+[e :U _limpiaPuertos ]
+[f ]
+"37
+[; ;main.c: 37:     TRISBbits.RB0 = 0;
+[e = . . _TRISBbits 1 0 -> -> 0 `i `uc ]
+"38
+[; ;main.c: 38:     TRISBbits.RB1 = 1;
+[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
+"39
+[; ;main.c: 39:     TRISBbits.RB2 = 1;
+[e = . . _TRISBbits 1 2 -> -> 1 `i `uc ]
+"40
+[; ;main.c: 40: }
+[e :UE 373 ]
 }

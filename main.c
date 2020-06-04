@@ -20,7 +20,16 @@
 void limpiaPuertos(void);
 
 void main(void) {
-    int counter = 0; 
+    int counter, variableRandonDeCuentaXD = 0;
+    limpiaPuertos();
+    for (variableRandonDeCuentaXD = 0 ; variableRandonDeCuentaXD <= 100 ; variableRandonDeCuentaXD ++){
+        if (variableRandonDeCuentaXD <= 50){
+            LED_PWM = 1;
+        } else {
+            LED_PWM = 0;
+        }
+        __delay_ms(5);
+    }
     return;
 }
 
