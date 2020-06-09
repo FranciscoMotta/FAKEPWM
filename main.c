@@ -17,14 +17,18 @@
 #define TOPE 100
 #define PISO 0
 
+void limpiaPuertos(void); //Funcion para iniciar los puertos y limparlos 
 
-void limpiaPuertos(void);
+//EL PRESENTE CÓDIGO BUSCA SIMULAR EL PRINCIPIO DE FUNCIONAMIENTO DEL PWM
+//LA REALIZACIÓN DEL MISMO SE HACE SIN LA IMPLEMENTACIÓN DE NINGÚN PERIFÉRICO PARA GENERAR
+//LA VARIACIÓN DE ANCHO DE PULSO, PARA ELLO NOS REFERIMOS A QUE UN PWM, EN ESCENCIA, ES UN CONTADOR
+//Y UN COMPARADOR 
 
-void main(void) {
-    int counter, variableRandonDeCuentaXD = 0;
-    limpiaPuertos();
-    counter = 50;
-FAKE:
+void main(void) { // Función principal 
+    int counter, variableRandonDeCuentaXD = 0; //Creamos unas variables de cuenta cualquiera
+    limpiaPuertos(); //Iniciamos los puertos respectivos;
+    counter = 50; //Iniciamos el valor de la variable counter
+FAKE: 
     for (variableRandonDeCuentaXD = 0; variableRandonDeCuentaXD <= 100; variableRandonDeCuentaXD++) {
         if (variableRandonDeCuentaXD <= counter) {
             LED_PWM = 1;
@@ -57,7 +61,7 @@ FAKE:
 }
 
 void limpiaPuertos(void) {
-    TRISBbits.RB0 = 0; // Ponemos como salida el pin que servir� de pwm
+    TRISBbits.RB0 = 0; // Ponemos como salida el pin que servirá de pwm
     TRISBbits.RB1 = 1; // Ponemos en 1 el pin RB1 para que sea entrada 
     TRISBbits.RB2 = 1; // Ponemos en 1 al pin RB2 para que sea entrada 
 }
